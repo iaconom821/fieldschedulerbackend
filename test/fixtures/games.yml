@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  field_id: one
+  player_id: one
+  start_time: 2021-05-28 14:55:58
+  end_time: 2021-05-28 14:55:58
+  day: 2021-05-28 14:55:58
+  recommended_skill: 1
+  price: 9.99
+
+two:
+  field_id: two
+  player_id: two
+  start_time: 2021-05-28 14:55:58
+  end_time: 2021-05-28 14:55:58
+  day: 2021-05-28 14:55:58
+  recommended_skill: 1
+  price: 9.99
