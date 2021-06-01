@@ -1,5 +1,5 @@
-class GamesController < ApplicationController
-  before_action :set_game, only: [:show, :update, :destroy]
+class Api::V1::GamesController < ApplicationController
+  before_action :set_game, only: [:show, :update, :destroy, :authorized]
 
   # GET /games
   def index
