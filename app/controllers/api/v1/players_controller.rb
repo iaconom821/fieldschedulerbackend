@@ -1,4 +1,5 @@
-class PlayersController < ApplicationController
+class Api::V1::PlayersController< ApplicationController
+  skip_before_action :authorized, only: [:create, :login]
   before_action :set_player, only: [:show, :update, :destroy]
 
   # GET /players
@@ -15,13 +16,14 @@ class PlayersController < ApplicationController
 
   # POST /players
   def create
-    @player = Player.new(player_params)
-
-    if @player.save
-      render json: @player, status: :created, location: @player
+    @player = Player.create(player_params)
+    if @player.valid?
+      token = encode_token({player_id: @player.id})
+      render json: {player: @player, token: token}
     else
-      render json: @player.errors, status: :unprocessable_entity
+      render json: {error: "Invalid username or password"}
     end
+
   end
 
   # PATCH/PUT /players/1
@@ -36,6 +38,23 @@ class PlayersController < ApplicationController
   # DELETE /players/1
   def destroy
     @player.destroy
+  end
+
+  def login
+    byebug
+    @player = Player.find_by(username: params[:username])
+
+    if @player && @player.authenticate(params[:password])
+      token = encode_token({user_id: @player.id})
+      render json: {player: @player, token: token}
+    else
+      render json: {error: "Invalid username or password"}
+    end
+  end
+
+
+  def auto_login
+    render json: @player
   end
 
   private

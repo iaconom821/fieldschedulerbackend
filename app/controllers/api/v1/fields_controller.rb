@@ -1,4 +1,4 @@
-class FieldsController < ApplicationController
+class Api::V1::FieldsController < ApplicationController
   before_action :set_field, only: [:show, :update, :destroy]
 
   # GET /fields

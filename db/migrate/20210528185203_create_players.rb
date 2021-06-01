@@ -5,6 +5,7 @@ class CreatePlayers < ActiveRecord::Migration[6.1]
       t.integer :age
       t.integer :skill_level
       t.string :username
+      t.string :password_digest
 
       t.timestamps
     end
