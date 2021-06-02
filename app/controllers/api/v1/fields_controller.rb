@@ -1,5 +1,5 @@
 class Api::V1::FieldsController < ApplicationController
-  before_action :set_field, only: [:show, :update, :destroy]
+  before_action :set_field, only: [:show, :update, :destroy, :logged_in]
 
   # GET /fields
   def index
