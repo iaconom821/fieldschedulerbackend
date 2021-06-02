@@ -1,6 +1,6 @@
 class Api::V1::FieldsController < ApplicationController
-  before_action :set_field, only: [:show, :update, :destroy, :logged_in]
-
+  before_action :authorized
+  before_action :set_field, only: [:show, :update, :destroy]
   # GET /fields
   def index
     @fields = Field.all
@@ -18,7 +18,7 @@ class Api::V1::FieldsController < ApplicationController
     @field = Field.new(field_params)
 
     if @field.save
-      render json: @field, status: :created, location: @field
+      render json: @field, status: :created
     else
       render json: @field.errors, status: :unprocessable_entity
     end
