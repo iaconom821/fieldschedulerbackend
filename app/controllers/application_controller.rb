@@ -24,6 +24,7 @@ class ApplicationController < ActionController::API
 
     def logged_in_player
         if decoded_token
+            byebug
           player_id = decoded_token[0]['player_id']
           @player = Player.find_by(id: player_id)
         end
