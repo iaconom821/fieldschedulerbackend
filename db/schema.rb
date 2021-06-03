@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_01_181219) do
+ActiveRecord::Schema.define(version: 2021_06_02_215958) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2021_06_01_181219) do
     t.string "img_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "name"
   end
 
   create_table "games", force: :cascade do |t|
@@ -28,7 +29,6 @@ ActiveRecord::Schema.define(version: 2021_06_01_181219) do
     t.bigint "player_id", null: false
     t.datetime "start_time"
     t.datetime "end_time"
-    t.datetime "day"
     t.integer "recommended_skill"
     t.decimal "price"
     t.datetime "created_at", precision: 6, null: false

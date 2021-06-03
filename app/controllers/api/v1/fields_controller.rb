@@ -46,6 +46,6 @@ class Api::V1::FieldsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def field_params
-      params.require(:field).permit(:address, :size, :img_url)
+      params.require(:field).permit(:address, :size, :img_url, :name)
     end
 end

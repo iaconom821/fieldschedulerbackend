@@ -1,4 +1,5 @@
 class Api::V1::GamesController < ApplicationController
+  skip_before_action :authorized, only: [:index]
   before_action :set_game, only: [:show, :update, :destroy, :authorized]
 
   # GET /games
@@ -18,7 +19,7 @@ class Api::V1::GamesController < ApplicationController
     @game = Game.new(game_params)
 
     if @game.save
-      render json: @game, status: :created, location: @game
+      render json: @game, status: :created
     else
       render json: @game.errors, status: :unprocessable_entity
     end
@@ -46,6 +47,6 @@ class Api::V1::GamesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def game_params
-      params.require(:game).permit(:field_id_id, :player_id_id, :start_time, :end_time, :day, :recommended_skill, :price)
+      params.require(:game).permit(:field_id, :player_id, :start_time, :end_time, :recommended_skill, :price)
     end
 end
