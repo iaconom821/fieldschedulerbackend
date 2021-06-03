@@ -37,6 +37,7 @@ class Api::V1::GamesController < ApplicationController
   # DELETE /games/1
   def destroy
     @game.destroy
+
   end
 
   private
