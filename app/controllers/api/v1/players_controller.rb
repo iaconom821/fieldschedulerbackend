@@ -1,5 +1,6 @@
 class Api::V1::PlayersController< ApplicationController
   skip_before_action :authorized, only: [:create, :login]
+  before_action :authorized
   before_action :set_player, only: [:show, :update, :destroy]
 
   # GET /players

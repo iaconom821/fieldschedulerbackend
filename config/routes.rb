@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   #user login
   namespace :api do
     namespace :v1 do
+      get "/players", to: "players#index"
       resource :players
       post "/login", to: "players#login"
       get "/auto_login", to: "players#auto_login"

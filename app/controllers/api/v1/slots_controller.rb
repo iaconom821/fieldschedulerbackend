@@ -1,4 +1,5 @@
-class SlotsController < ApplicationController
+class Api::V1::SlotsController < ApplicationController
+  before_action :authorized
   before_action :set_slot, only: [:show, :update, :destroy]
 
   # GET /slots

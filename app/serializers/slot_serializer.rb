@@ -1,5 +1,3 @@
 class SlotSerializer < ActiveModel::Serializer
-  attributes :id, :price
-  has_one :player
-  has_one :game
+  attributes :id, :price, :player_id, :game_id
 end
