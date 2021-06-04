@@ -1,5 +1,4 @@
 class Api::V1::GamesController < ApplicationController
-  skip_before_action :authorized, only: [:index]
   before_action :set_game, only: [:show, :update, :destroy, :authorized]
 
   # GET /games
