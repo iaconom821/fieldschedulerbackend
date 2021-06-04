@@ -36,8 +36,11 @@ class Api::V1::GamesController < ApplicationController
 
   # DELETE /games/1
   def destroy
-    @game.destroy
-
+    if @game.player_id == logged_in_player.id
+      @game.destroy
+    else
+      render json: { message: "Unauthorized" }, status: :unauthorized  
+    end
   end
 
   private

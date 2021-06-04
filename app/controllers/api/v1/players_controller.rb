@@ -23,7 +23,7 @@ class Api::V1::PlayersController< ApplicationController
       token = encode_token({player_id: @player.id})
       render json: {player: @player, token: token}
     else
-      render json: {error: "Invalid username or password"}
+      render json: @player.errors.messages
     end
 
   end

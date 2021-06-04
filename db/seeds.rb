@@ -19,6 +19,28 @@ p1 = Player.create(name:"Danny", age:"25", skill_level: 5, username:"ManCityFan"
 
 p2 = Player.create(name:"Mike", age:"28", skill_level: 7, username:"soccerisfun", password:"soccerballs" )
 
+p4 = Player.create(name:"Will", age:"25", skill_level: 9, username:"brickcity", password:"bricks" )
+
+p5 = Player.create(name:"Adam", age:"30", skill_level: 7, username:"myschwartzisbigger", password:"spaceballs" )
+
+p6 = Player.create(name:"Jon", age:"35", skill_level: 2, username:"junior", password:"jr" )
+
+p7 = Player.create(name:"Isabella", age:"21", skill_level: 10, username:"isa", password:"bella" )
+
+p8 = Player.create(name:"Tammy", age:"29", skill_level: 9, username:"wong", password:"warp" )
+
+p9 = Player.create(name:"Erin", age:"27", skill_level: 8, username:"sell", password:"ers" )
+
+p10 = Player.create(name:"Paul", age:"24", skill_level: 6, username:"big", password:"paul" )
+
+p11 = Player.create(name:"Peter", age:"36", skill_level: 10, username:"love", password:"manu" )
+
+p12 = Player.create(name:"Josh", age:"31", skill_level: 1, username:"zim", password:"man" )
+
+p13 = Player.create(name:"Mike", age:"29", skill_level: 7, username:"corr", password:"codes" )
+
+p14 = Player.create(name:"Zach", age:"30", skill_level: 2, username:"wizard", password:"magic" )
+
 g1 = Game.create(player_id: Player.all.sample.id, field_id: Field.all.sample.id, start_time: DateTime.new(2021,6,19,8,37,48,"-06:00"), end_time:DateTime.new(2021,6,19,9,37,48,"-06:00"), recommended_skill:5, price:0 )
 
 g2 = Game.create(player_id: Player.all.sample.id, field_id: Field.all.sample.id, start_time:DateTime.new(2021,5,19,4,37,48,"-06:00"), end_time: DateTime.new(2021,5,19,5,37,48,"-06:00"), recommended_skill:5, price:0 )
