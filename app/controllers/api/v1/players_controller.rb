@@ -1,6 +1,5 @@
 class Api::V1::PlayersController< ApplicationController
   skip_before_action :authorized, only: [:create, :login]
-  before_action :authorized
   before_action :set_player, only: [:show, :update, :destroy]
 
   # GET /players
@@ -17,7 +16,9 @@ class Api::V1::PlayersController< ApplicationController
 
   # POST /players
   def create
-    @player = Player.create(player_params)
+    new_hash=player_params
+    new_hash[:password] = params[:password]
+    @player = Player.create(new_hash )
     if @player.valid?
       token = encode_token({player_id: @player.id})
       render json: {player: @player, token: token}
@@ -65,6 +66,6 @@ class Api::V1::PlayersController< ApplicationController
 
     # Only allow a list of trusted parameters through.
     def player_params
-      params.require(:player).permit(:name, :age, :skill_level, :username)
+      params.require(:player).permit(:name, :age, :skill_level, :username, :password)
     end
 end

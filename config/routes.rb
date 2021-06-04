@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       get "/players", to: "players#index"
       resource :players
       post "/login", to: "players#login"
+      post "/players", to: "players#create"
       get "/auto_login", to: "players#auto_login"
       
       resources :fields
