@@ -73,6 +73,6 @@ test:
 #
 production:
   <<: *default
-  database: practiceapi_production
-  username: practiceapi
-  password: <%= ENV['PRACTICEAPI_DATABASE_PASSWORD'] %>
+  database: <%=ENV['DATABASE_URL']%>
+  # username: practiceapi
+  # password: <%= ENV['PRACTICEAPI_DATABASE_PASSWORD'] %>
