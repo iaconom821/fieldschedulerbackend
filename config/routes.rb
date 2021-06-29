@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+  get "/", to: "fields#home"
   #user login
   namespace :api do
     namespace :v1 do
